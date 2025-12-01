@@ -2,8 +2,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static int read() throws IOException {
         int points_one = 0;
@@ -11,11 +9,13 @@ public class Main {
         int active = 1;
         File f = new File("Scoreboard.txt");
         Scanner s = new Scanner(f);
-        while (s.hasNext()) {
 
-            if ((s.hasNextInt())) {
+        while (s.hasNext()) { // Check for next anything.
+            Scoreboard game = new Scoreboard(s.next(), s.next());
+            if ((s.hasNextInt())) { // Check for next integer.
                 if (s.nextInt() != 0) {
-                    points_one +=
+                    points_one += s.nextInt(); // Might not work
+
                 }
             }
             else {
@@ -24,6 +24,7 @@ public class Main {
             }
         }
     }
+
 
 
     public static void main(String[] args) {
